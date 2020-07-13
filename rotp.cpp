@@ -7,22 +7,24 @@ using namespace std;
 int flipPancakes(string stack)
 {
     int flips_made = 0;
+
+    // Let's go through the stack
     for(int j=1;j< stack.length() ;j++)
     {
-        //cout << "char: " << stack[j-1] << endl;
+        // If current pancake is not like the one before, we will need to make a change
         if( stack[j] != stack[j-1] )
         {
             flips_made += 1;
         }
     }
 
+    // If the last pancake is not "OK", we will need to make a change, otherwise return the flips made until now.
     if( stack[stack.length()-1] == '+')
     {
         return flips_made;
     } else {
         return flips_made + 1;
     }
-    return flips_made;
 }
 
 int main()
