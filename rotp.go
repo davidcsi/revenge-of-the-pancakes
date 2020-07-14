@@ -34,7 +34,7 @@ func flipStack(stack string) (int) {
 
 func main() {
 	file, err := os.Open("sample.in") 
-    check(err)
+	check(err)
 	snl := bufio.NewScanner(file)
 
 	// Read first line to get sample count
@@ -44,11 +44,11 @@ func main() {
 	check(err)
 
 	// Get the count of samples, on per line and do the flipping
-    for i:=1; i<=lines; i++ {
+	for i:=1; i<=lines; i++ {
 		snl.Scan()
 		flips := flipStack( snl.Text() )
 		fmt.Printf( "Case [%s] #%v: %v\n", snl.Text(), i, flips )
-    }
+	}
 
 	err = snl.Err()
 
